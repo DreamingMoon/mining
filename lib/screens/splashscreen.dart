@@ -19,14 +19,12 @@ class SplashState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: initScreen(context),
-    );
+    return initScreen(context);
   }
 
   startTime() async {
     var duration = const Duration(seconds: 3);
-    return Timer(duration, route );
+    return Timer(duration, route);
   }
 
   route() {
