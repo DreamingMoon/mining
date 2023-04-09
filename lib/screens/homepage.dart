@@ -35,12 +35,10 @@ class _HomePageState extends State<HomePage> {
       body: IndexedStack(
         index: _selectedindex,
         children: [
-          NewsPage(),
           HomeScreen(),
+          NewsPage(),
         ],
       ),
     );
   }
 }
-
-
