@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/screens/homescreen.dart';
+import 'package:mining_ap/screens/settings.dart';
+import 'package:mining_ap/screens/wallet.dart';
 import '../Screens/news.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,8 +25,9 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'home'),
           BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'news'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'person'),
-          BottomNavigationBarItem(icon: Icon(Icons.wallet), label: 'wallet'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet_rounded),
+              label: 'wallet'),
           BottomNavigationBarItem(
               icon: Icon(Icons.settings), label: 'settings'),
         ],
@@ -37,6 +40,8 @@ class _HomePageState extends State<HomePage> {
         children: [
           HomeScreen(),
           NewsPage(),
+          WalletPage(),
+          SettingsPage(),
         ],
       ),
     );

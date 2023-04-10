@@ -13,60 +13,103 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        scrolledUnderElevation: scrolledUnderElevation,
-        shadowColor: shadowColor ? Theme.of(context).colorScheme.shadow : null,
-        centerTitle: true,
-        title: const Text('GameBar'),
-      ),
-      body: ListView(
-        scrollDirection: Axis.vertical,
+      backgroundColor: Colors.lightBlueAccent,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
+          const SizedBox(
+            height: 40.0,
+          ),
+          const ListTile(
+            contentPadding: EdgeInsets.symmetric(horizontal: 6),
+            leading: CircleAvatar(
+              backgroundColor: Colors.grey,
+              radius: 30,
+            ),
+            title: Text(
+              '99000.2570 GB/s',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            subtitle: Text('GameBar per sec'),
+            trailing: Icon(
+              Icons.key,
+              size: 40,
+            ),
+          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: const [
+          //     Icon(Icons.arrow_circle_up, ), 
+          //     Icon(Icons.wallet),
+          //     Icon(Icons.arrow_circle_down),
+
+          //   ],
+          // ),
+          const SizedBox(
+            height: 40.0,
+          ),
+          Expanded(
             child: Container(
-              height: 200,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15), color: Colors.grey),
-              child: Column(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              child: ListView(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          Icons.remove_red_eye,
-                          size: 20,
-                        ),
-                        SizedBox(width: 20),
-                        Text(
-                          '1000',
-                          style: TextStyle(fontSize: 30),
-                        )
-                      ],
-                    ),
-                  ),
                   const SizedBox(
-                    height: 100,
+                    height: 10.0,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Container(
-                      height: 20,
-                      color: Colors.green,
-                    ),
-                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          'Daily Earnings',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.grey,
+                        ),
+                        title: Text('Game Bar'),
+                        subtitle: Text('Time id put here'),
+                        trailing: Text('GameBar Token Mined'),
+                      ),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.grey,
+                        ),
+                        title: Text('Game Bar'),
+                        subtitle: Text('Time id put here'),
+                        trailing: Text('GameBar Token Mined'),
+                      ),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.grey,
+                        ),
+                        title: Text('Game Bar'),
+                        subtitle: Text('Time id put here'),
+                        trailing: Text('GameBar Token Mined'),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Divider(),
-          const SizedBox(
-            height: 30,
           ),
         ],
       ),
