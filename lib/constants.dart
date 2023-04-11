@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mining_ap/screens/wallet.dart';
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
@@ -21,10 +22,11 @@ class SettingsTile extends StatelessWidget {
   }
 }
 
+Icon backIcon = const Icon(Icons.arrow_back_ios_new_outlined);
+
 Icon forwardIcon = const Icon(Icons.arrow_forward_ios_rounded);
 Text asText = const Text('Account security');
 Icon asIcon = const Icon(Icons.shield_outlined);
-
 
 Icon sqIcon = const Icon(Icons.question_mark_outlined);
 Text sqText = const Text('Security Question');
@@ -34,3 +36,55 @@ Text communityText = const Text('Community');
 
 Icon aboutIcon = const Icon(Icons.info);
 Text aboutText = const Text('About');
+Color kScaffColor = Colors.lightBlueAccent;
+Widget kSpacer() => const SizedBox(
+      height: 40.0,
+    );
+Widget minerCounter() => const ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 6),
+      leading: CircleAvatar(
+        backgroundColor: Colors.grey,
+        radius: 30,
+      ),
+      title: Text(
+        '99000.2570 GB/s',
+        style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      subtitle: Text('GameBar per sec'),
+      trailing: Icon(
+        Icons.key,
+        size: 40,
+      ),
+    );
+Widget homeContainerSpacer() => const SizedBox(
+      height: 10.0,
+    );
+
+Widget dailyEarned() => const ListTile(
+      leading: CircleAvatar(
+        backgroundColor: Colors.grey,
+      ),
+      title: Text('Game Bar'),
+      subtitle: Text('Time id put here'),
+      trailing: Text('GameBar Token Mined'),
+    );
+
+class RoundIconButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  RoundIconButton({required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      fillColor: Colors.lightBlueAccent,
+      onPressed: onPressed,
+      elevation: 6.0,
+      constraints: const BoxConstraints(maxWidth: 25.0, maxHeight: 25.0),
+      shape: const CircleBorder(side: BorderSide.none),
+      child: forwardIcon,
+    );
+  }
+}

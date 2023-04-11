@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/constants.dart';
+import 'package:mining_ap/screens/account_settings.dart';
+import 'package:mining_ap/screens/wallet.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -7,6 +9,17 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  void onButtonPressed() {
+    setState(() {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => AccountSettings(),
+        ),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,22 +33,32 @@ class _SettingsPageState extends State<SettingsPage> {
         children: [
           SettingsTile(
             leadingIcon: asIcon,
-            forwardIcon: forwardIcon,
+            forwardIcon: RoundIconButton(
+              onPressed: () {
+                onButtonPressed();
+              },
+            ),
             acText: asText,
           ),
           SettingsTile(
             leadingIcon: sqIcon,
-            forwardIcon: forwardIcon,
+            forwardIcon: RoundIconButton(
+              onPressed: () {},
+            ),
             acText: sqText,
           ),
           SettingsTile(
             leadingIcon: communityIcon,
-            forwardIcon: forwardIcon,
+            forwardIcon: RoundIconButton(
+              onPressed: () {},
+            ),
             acText: communityText,
           ),
           SettingsTile(
             leadingIcon: aboutIcon,
-            forwardIcon: forwardIcon,
+            forwardIcon: RoundIconButton(
+              onPressed: () {},
+            ),
             acText: aboutText,
           ),
         ],

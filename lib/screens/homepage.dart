@@ -5,6 +5,7 @@ import 'package:mining_ap/screens/wallet.dart';
 import '../Screens/news.dart';
 
 class HomePage extends StatefulWidget {
+  String id = 'HomePage';
   @override
   State<HomePage> createState() => _HomePageState();
 }
