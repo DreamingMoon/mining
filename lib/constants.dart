@@ -88,3 +88,6 @@ class RoundIconButton extends StatelessWidget {
     );
   }
 }
+
+final GlobalKey<FormState> formkey = GlobalKey<FormState>();
+final TextEditingController emailController = TextEditingController();
