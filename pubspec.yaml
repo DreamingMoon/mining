@@ -15,12 +15,17 @@ dependencies:
   flutter:
     sdk: flutter
 
-  
-  firebase_auth: ^0.14.0+5
-  firebase_dynamic_links: ^0.5.1  
   flutter_bloc: ^8.0.0
   flutter_svg: ^1.1.6
   cupertino_icons: ^1.0.2
+  firebase_auth: ^4.3.0
+  firebase_dynamic_links: ^5.0.17
+  flutter_native_splash: ^2.2.9
+
+
+flutter_native_splash:
+  image: assets/images/wondering.png
+  color: "42a5f5"
 
 
 dev_dependencies:

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/screens/wallet.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
@@ -91,3 +93,7 @@ class RoundIconButton extends StatelessWidget {
 
 final GlobalKey<FormState> formkey = GlobalKey<FormState>();
 final TextEditingController emailController = TextEditingController();
+final TextEditingController passwordController = TextEditingController();
+final FirebaseAuth auth = FirebaseAuth.instance;
+
+

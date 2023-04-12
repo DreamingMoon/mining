@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/constants.dart';
 import 'package:mining_ap/screens/account_settings.dart';
-import 'package:mining_ap/screens/wallet.dart';
+
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _SettingsPageState extends State<SettingsPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => AccountSettings(),
+          builder: (context) => Accountsettings('title'),
         ),
       );
     });
