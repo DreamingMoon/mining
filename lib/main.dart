@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mining_ap/screens/buttom_navigation_screens/homepage.dart';
-import 'package:mining_ap/screens/settings_page_screens/login.dart';
 import 'package:mining_ap/screens/settings_page_screens/register.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mining_ap/services/auth.dart';
