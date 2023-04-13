@@ -18,7 +18,7 @@ class _NewsPageState extends State<NewsPage> {
       body: ListView.builder(
         itemBuilder: ((context, index) {
           Axis.vertical;
-          return ListTile(
+          return const ListTile(
          title:  Text('change'),
           );
         }),

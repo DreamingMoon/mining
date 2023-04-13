@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035904055734",
+    "project_id": "gamebar-mining",
+    "storage_bucket": "gamebar-mining.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035904055734:android:ddafa215d2b0a379a8e917",
+        "android_client_info": {
+          "package_name": "com.DreamingMoon.GameBarMining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035904055734-u5b918knto7an74c1hi4g48imf14vlaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgauqxyKV5FazSEmbJf25_Exkyxka2PPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035904055734-u5b918knto7an74c1hi4g48imf14vlaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
