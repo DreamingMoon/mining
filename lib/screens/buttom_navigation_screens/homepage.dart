@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mining_ap/screens/homescreen.dart';
-import 'package:mining_ap/screens/settings.dart';
-import 'package:mining_ap/screens/wallet.dart';
-import '../Screens/news.dart';
+import 'package:mining_ap/screens/buttom_navigation_screens/homescreen.dart';
+import 'package:mining_ap/screens/buttom_navigation_screens/settings.dart';
+import 'package:mining_ap/screens/buttom_navigation_screens/wallet.dart';
+import 'package:mining_ap/screens/buttom_navigation_screens/news.dart';
 
 class HomePage extends StatefulWidget {
   String id = 'HomePage';

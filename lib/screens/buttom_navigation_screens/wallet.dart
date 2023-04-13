@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/constants.dart';
-import 'homescreen.dart';
+
 
 class WalletPage extends StatefulWidget {
   String id = 'WalletPage';

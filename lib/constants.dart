@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mining_ap/screens/wallet.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
@@ -27,8 +24,8 @@ class SettingsTile extends StatelessWidget {
 Icon backIcon = const Icon(Icons.arrow_back_ios_new_outlined);
 
 Icon forwardIcon = const Icon(Icons.arrow_forward_ios_rounded);
-Text asText = const Text('Account security');
-Icon asIcon = const Icon(Icons.shield_outlined);
+Text accText = const Text('Account');
+Icon accIcon = const Icon(Icons.account_box);
 
 Icon sqIcon = const Icon(Icons.question_mark_outlined);
 Text sqText = const Text('Security Question');
@@ -41,6 +38,9 @@ Text aboutText = const Text('About');
 Color kScaffColor = Colors.lightBlueAccent;
 Widget kSpacer() => const SizedBox(
       height: 40.0,
+    );
+Widget kLargeSpacer() => const SizedBox(
+      height: 100.0,
     );
 Widget minerCounter() => const ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 6),
@@ -90,10 +90,3 @@ class RoundIconButton extends StatelessWidget {
     );
   }
 }
-
-final GlobalKey<FormState> formkey = GlobalKey<FormState>();
-final TextEditingController emailController = TextEditingController();
-final TextEditingController passwordController = TextEditingController();
-final FirebaseAuth auth = FirebaseAuth.instance;
-
-
