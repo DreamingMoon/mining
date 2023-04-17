@@ -15,48 +15,33 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kScaffColor,
+      backgroundColor: Colors.grey[200],
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          kSpacer(),
-          minerCounter(),
-          kSpacer(),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              child: ListView(
-                children: [
-                  homeContainerSpacer(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text(
-                          'Daily Earnings',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ),
-                      homeContainerSpacer(),
-                      dailyEarned(),
-                      dailyEarned(),
-                      dailyEarned(),
-                    ],
-                  )
-                ],
-              ),
-            ),
+          const Expanded(
+            child: TopContainer(),
           ),
+
+          // Text(
+          //   'Daily earnings',
+          //   style: TextStyle(fontWeight: FontWeight.w300, fontSize: 24),
+          // ),
+          Column(
+            children: [
+              ListView.builder(
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return const ListTile(
+                    leading: dleading,
+                    title: Text(dtitle),
+                    subtitle: Text(dsubtitle),
+                    trailing: Text(dtrailing),
+                  );
+                },
+              ),
+            ],
+          )
         ],
       ),
     );
