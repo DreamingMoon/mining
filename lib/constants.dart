@@ -64,13 +64,18 @@ Widget homeContainerSpacer() => const SizedBox(
       height: 10.0,
     );
 
-Widget dailyEarned() => const ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.grey,
-      ),
-      title: Text('Inertia'),
-      subtitle: Text('Time id put here'),
-      trailing: Text('Inertia Token Mined'),
+Widget dailyEarned() => Column(
+      children: const [
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.grey,
+          ),
+          title: Text('Inertia'),
+          subtitle: Text('Time id put here'),
+          trailing: Text('Inertia Token Mined'),
+        ),
+        Divider()
+      ],
     );
 const dleading = CircleAvatar(
   backgroundColor: Colors.grey,
@@ -105,7 +110,6 @@ class TopContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-       
         Container(
           decoration: BoxDecoration(
               gradient: const LinearGradient(
