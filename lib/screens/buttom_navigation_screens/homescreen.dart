@@ -10,53 +10,62 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool shadowColor = false;
-  double? scrolledUnderElevation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kScaffColor,
+      appBar: AppBar(title: Text('sasa')),
+      backgroundColor: Colors.grey[200],
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+         mainAxisSize: MainAxisSize.max,
         children: [
-          kSpacer(),
-          minerCounter(),
-          kSpacer(),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                  height: 350,
+                  decoration: const BoxDecoration(
+                    color: Color(0xff212121),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(45),
+                      bottomRight: Radius.circular(45),
+                    ),
+                  ),
                 ),
-              ),
-              child: ListView(
-                children: [
-                  homeContainerSpacer(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text(
-                          'Daily Earnings',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w300,
-                          ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                          colors: [
+                            Color(0xff00796B),
+                            Color(0xff80CBC4),
+                          ],
                         ),
-                      ),
-                      homeContainerSpacer(),
-                      dailyEarned(),
-                      dailyEarned(),
-                      dailyEarned(),
-                    ],
-                  )
-                ],
-              ),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        kSpacer(),
+                        minerCounter(),
+                        kSpacer(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
+          SizedBox(
+            child: ListView.builder(
+              itemCount: 10,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) => dailyEarned(),
+            ),
+          )
+          
         ],
       ),
     );

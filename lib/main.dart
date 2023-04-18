@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mining_ap/screens/buttom_navigation_screens/homepage.dart';
 import 'package:mining_ap/screens/settings_page_screens/register.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mining_ap/services/auth.dart';
@@ -13,7 +14,7 @@ void main() async {
         messagingSenderId: '1035904055734',
         projectId: 'gamebar-mining'),
   );
-  runApp(HomeRoutes());
+  runApp(HomeRoutes(),);
 }
 
 class HomeRoutes extends StatelessWidget {
@@ -21,13 +22,15 @@ class HomeRoutes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      
       providers: [
         Provider<Auth>(
           create: (_) => Auth(),
         ),
       ],
       child: MaterialApp(
-        home: RegisterPage(),
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
       ),
     );
   }
