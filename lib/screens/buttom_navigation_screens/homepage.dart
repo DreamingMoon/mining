@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mining_ap/screens/buttom_navigation_screens/homescreen.dart';
+import 'package:mining_ap/screens/home/homescreen.dart';
 import 'package:mining_ap/screens/buttom_navigation_screens/settings.dart';
 import 'package:mining_ap/screens/buttom_navigation_screens/wallet.dart';
 import 'package:mining_ap/screens/buttom_navigation_screens/game.dart';
@@ -11,13 +11,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedindex = 0;
-  
+
   final List<Widget> _navScreen = [
-          HomeScreen(),
-          NewsPage(),
-          WalletPage(),
-          SettingsPage(),
-        ];
+    HomeScreen(),
+    NewsPage(),
+    WalletPage(),
+    SettingsPage(),
+  ];
   void onItemTapped(int index) {
     setState(() {
       _selectedindex = index;
@@ -28,10 +28,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 8, 8, 8),
-        unselectedItemColor: Colors.white.withOpacity(.60),
+        backgroundColor: Colors.black,
+        unselectedItemColor: Colors.white.withOpacity(0.6),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _selectedindex,
         onTap: onItemTapped,
       ),
-      body:_navScreen[_selectedindex],
+      body: _navScreen[_selectedindex],
     );
   }
 }

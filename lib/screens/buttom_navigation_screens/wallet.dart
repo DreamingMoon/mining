@@ -12,7 +12,7 @@ class _WalletPageState extends State<WalletPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffColor,
-      body: Expanded(
+      body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -22,9 +22,7 @@ class _WalletPageState extends State<WalletPage> {
             ),
           ),
           child: ListView(
-            children: const [
-              
-            ],
+            children: [dailyEarned()],
           ),
         ),
       ),
