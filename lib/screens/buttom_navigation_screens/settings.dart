@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mining_ap/constants.dart';
 import 'package:mining_ap/screens/settings_page_screens/coming_soon_page.dart';
 import 'package:mining_ap/screens/settings_page_screens/login.dart';
-import 'package:mining_ap/screens/settings_page_screens/register.dart';
+
 
 class SettingsPage extends StatefulWidget {
   @override

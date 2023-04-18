@@ -10,38 +10,62 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool shadowColor = false;
-  double? scrolledUnderElevation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('sasa')),
       backgroundColor: Colors.grey[200],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+         mainAxisSize: MainAxisSize.max,
         children: [
-          const Expanded(
-            child: TopContainer(),
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                  height: 350,
+                  decoration: const BoxDecoration(
+                    color: Color(0xff212121),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(45),
+                      bottomRight: Radius.circular(45),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                          colors: [
+                            Color(0xff00796B),
+                            Color(0xff80CBC4),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        kSpacer(),
+                        minerCounter(),
+                        kSpacer(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-
-          // Text(
-          //   'Daily earnings',
-          //   style: TextStyle(fontWeight: FontWeight.w300, fontSize: 24),
-          // ),
-          Column(
-            children: [
-              ListView.builder(
-                itemCount: 20,
-                itemBuilder: (context, index) {
-                  return const ListTile(
-                    leading: dleading,
-                    title: Text(dtitle),
-                    subtitle: Text(dsubtitle),
-                    trailing: Text(dtrailing),
-                  );
-                },
-              ),
-            ],
+          SizedBox(
+            child: ListView.builder(
+              itemCount: 10,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) => dailyEarned(),
+            ),
           )
+          
         ],
       ),
     );

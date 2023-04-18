@@ -72,10 +72,10 @@ Widget dailyEarned() => const ListTile(
       subtitle: Text('Time id put here'),
       trailing: Text('Inertia Token Mined'),
     );
-const dleading =  CircleAvatar(
+const dleading = CircleAvatar(
   backgroundColor: Colors.grey,
 );
-const  dtitle = 'Inertia';
+const dtitle = 'Inertia';
 const dsubtitle = 'Time id put here';
 const dtrailing = 'Inertia Token Mined';
 
@@ -95,6 +95,7 @@ class RoundIconButton extends StatelessWidget {
     );
   }
 }
+
 class TopContainer extends StatelessWidget {
   const TopContainer({
     Key? key,
@@ -102,55 +103,29 @@ class TopContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xff212121),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(45),
-          bottomRight: Radius.circular(45),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.grey,
-              ),
-              trailing: Icon(
-                Icons.add_circle_outline_sharp,
-                size: 40,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 20, vertical: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
-                    colors: [
-                      Color(0xff00796B),
-                      Color(0xff80CBC4),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                children: [
-                  kSpacer(),
-                  minerCounter(),
-                  kSpacer(),
+    return Stack(
+      children: [
+       
+        Container(
+          decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [
+                  Color(0xff00796B),
+                  Color(0xff80CBC4),
                 ],
               ),
-            ),
+              borderRadius: BorderRadius.circular(20)),
+          child: Column(
+            children: [
+              kSpacer(),
+              minerCounter(),
+              kSpacer(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
