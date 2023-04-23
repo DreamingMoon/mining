@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,8 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           begin: Alignment.bottomLeft,
                           end: Alignment.topRight,
                           colors: [
-                            Color(0xff00796B),
-                            Color(0xff80CBC4),
+                            Color(0xffFBE9E7),
+                            Color(0xffFF7043),
+                            Color(0xff89341A),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(20)),
@@ -64,8 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+              padding: const EdgeInsets.only(
+                  left: 16, right: 16, top: 16, bottom: 16),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

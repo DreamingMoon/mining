@@ -1,29 +1,84 @@
 import 'package:flutter/material.dart';
 
-class SettingsTile extends StatelessWidget {
+import 'screens/settings/settings_screens/coming_soon_page.dart';
+
+class SettingsTile extends StatefulWidget {
   const SettingsTile({
     Key? key,
-    required this.acText,
+    required this.settingsText,
     required this.forwardIcon,
     required this.leadingIcon,
   }) : super(key: key);
-  final Text acText;
+  final Text settingsText;
   final Widget forwardIcon;
   final Widget leadingIcon;
 
   @override
+  State<SettingsTile> createState() => _SettingsTileState();
+}
+
+class _SettingsTileState extends State<SettingsTile> {
+  // void ontap() {
+  //   setState(() {
+  //     Navigator.push(
+  //         context, MaterialPageRoute(builder: ((context) => ComingSoon())));
+  //   });
+  // }
+
+  @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: leadingIcon,
-      title: acText,
-      trailing: forwardIcon,
+      leading: widget.leadingIcon,
+      title: widget.settingsText,
+      trailing: widget.forwardIcon,
+    );
+  }
+}
+
+class AccountTile extends StatefulWidget {
+  const AccountTile({
+    Key? key,
+    this.accountText,
+    this.forwardIcon,
+    this.leading,
+  }) : super(key: key);
+  final Widget? accountText;
+  final Widget? forwardIcon;
+  final Text? leading;
+
+  @override
+  State<AccountTile> createState() => _AccountTileState();
+}
+
+class _AccountTileState extends State<AccountTile> {
+  void ontap() {
+    setState(() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: ((context) => ComingSoon())));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: ListTile(
+        
+        leading: widget.leading,
+        title: widget.accountText,
+        trailing:widget.forwardIcon, 
+        
+      ),
     );
   }
 }
 
 Icon backIcon = const Icon(Icons.arrow_back_ios_new_outlined);
 
-Icon forwardIcon = const Icon(Icons.arrow_forward_ios_rounded);
+Icon forwardIcon = const Icon(
+  Icons.arrow_forward_ios_rounded,
+  color: Colors.black,
+);
 Text accText = const Text('Account');
 Icon accIcon = const Icon(Icons.account_box);
 
@@ -91,10 +146,10 @@ class RoundIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      fillColor: Colors.lightBlueAccent,
+      fillColor: const Color(0xff89341A),
       onPressed: onPressed,
       elevation: 6.0,
-      constraints: const BoxConstraints(maxWidth: 25.0, maxHeight: 25.0),
+      constraints: const BoxConstraints(maxWidth: 26.0, maxHeight: 25.5),
       shape: const CircleBorder(side: BorderSide.none),
       child: forwardIcon,
     );

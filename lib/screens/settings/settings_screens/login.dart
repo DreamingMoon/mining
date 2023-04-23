@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mining_ap/constants.dart';
-import 'package:mining_ap/screens/buttom_navigation_screens/settings.dart';
+import '../settings.dart';
 import 'package:provider/provider.dart';
 import 'package:mining_ap/services/auth.dart';
 import 'package:mining_ap/screens/buttom_navigation_screens/homepage.dart';

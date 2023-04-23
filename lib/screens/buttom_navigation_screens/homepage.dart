@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mining_ap/screens/home/homescreen.dart';
-import 'package:mining_ap/screens/buttom_navigation_screens/settings.dart';
+
 import 'package:mining_ap/screens/buttom_navigation_screens/wallet.dart';
-import 'package:mining_ap/screens/buttom_navigation_screens/game.dart';
+import 'package:mining_ap/screens/games/game.dart';
+
+import '../settings/settings.dart';
 
 class HomePage extends StatefulWidget {
   @override
